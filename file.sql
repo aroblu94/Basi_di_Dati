@@ -93,8 +93,7 @@ CREATE TABLE prodotti(
 CREATE DOMAIN dom_certificato AS VARCHAR CHECK (VALUE IN ('DOC', 'DOCG', 'IGT'));
 ALTER TABLE prodotti ADD COLUMN certificato dom_certificato;
 
-
-
+INSERT INTO prodotti (marca, qnt_disp, prezzo_agg, scadenza, provenienza, soglia_riordino, certificato) VALUES ('Vallelata', 2500, 1.25, '2014-11-30', 'ITA', 800, 'DOC');
 
 
 
