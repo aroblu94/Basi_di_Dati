@@ -1,3 +1,3 @@
 ##Basi di Dati
 
-Esercizi vari del corso di Basi di Dati. Ogni branch rappresenta le lezioni affrontate.
+Lezione del 23 ottobre 2014
