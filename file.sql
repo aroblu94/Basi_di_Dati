@@ -95,6 +95,18 @@ WHERE P.id NOT IN (
 	WHERE I.intolleranza = 'Glutine');
 
 
+-- determinare gli ingredienti usati in tutte le ricette
+-- in SQL non c'è la divisione, quindi
+-- => ingredienti tali che NON esiste neanche una ricetta
+-- in cui non sono usati
+SELECT I.nome FROM ingrediente I
+WHERE NOT EXISTS (
+	SELECT * FROM ricetta R
+	WHERE NOT EXISTS (
+		SELECT * FROM ricetta_composizione C
+		WHERE C.ricetta = R.id
+		AND C.ingrediente = I.nome));
+
 
 
 
